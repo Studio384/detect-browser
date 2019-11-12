@@ -1,6 +1,6 @@
 {
-  "name": "detect-browser",
-  "version": "4.8.0",
+  "name": "smol-browser",
+  "version": "0.1.0",
   "description": "Unpack a browser type and version from the useragent string",
   "main": "index.js",
   "types": "index.d.ts",
@@ -21,24 +21,23 @@
   "stability": "stable",
   "repository": {
     "type": "git",
-    "url": "https://github.com/DamonOehlman/detect-browser.git"
+    "url": "https://github.com/Studio384/smol-browser.git"
   },
   "keywords": [
     "browser",
     "detect",
     "useragent"
   ],
-  "author": "Damon Oehlman <damon.oehlman@gmail.com>",
+  "author": "Studio384",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/DamonOehlman/detect-browser/issues"
+    "url": "https://github.com/Studio384/smol-browser/issues"
   },
-  "homepage": "https://github.com/DamonOehlman/detect-browser",
+  "homepage": "https://github.com/Studio384/smol-browser",
   "devDependencies": {
     "@types/node": "^12.7.4",
     "embellish-readme": "^1.5.1",
     "prettier": "^1.18.2",
-    "semver": "^6.3.0",
     "tape": "^4.11.0",
     "tslint": "^5.11.0",
     "typescript": "^3.6.2"
