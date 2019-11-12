@@ -14,13 +14,10 @@ export class BrowserInfo
 }
 
 export type Browser =
-  | 'edge'
-  | 'chrome'
-  | 'chrome'
-  | 'firefox'
-  | 'android'
-  | 'safari'
-  | 'ios';
+  | 'Edge'
+  | 'Chrome'
+  | 'Firefox'
+  | 'Safari';
 export type OperatingSystem =
   | 'iOS'
   | 'Android OS'
@@ -34,16 +31,16 @@ type UserAgentMatch = [Browser, RegExpExecArray] | false;
 type OperatingSystemRule = [OperatingSystem, RegExp];
 
 const userAgentRules: UserAgentRule[] = [
-  ['edge', /Edg\/([0-9\._]+)/],
-  ['edge', /Edge\/([0-9\._]+)/],
-  ['edge', /EdgA\/([0-9\._]+)/],
-  ['edge', /EdgiOS\/([0-9\._]+)/],
-  ['chrome', /CriOS\/([0-9\.]+)(:?\s|$)/],
-  ['chrome', /(?!Chrom.*OPR)Chrom(?:e|ium)\/([0-9\.]+)(:?\s|$)/],
-  ['firefox', /Firefox\/([0-9\.]+)(?:\s|$)/],
-  ['firefox', /FxiOS\/([0-9\.]+)/],
-  ['ios', /Version\/([0-9\._]+).*Mobile.*Safari.*/],
-  ['safari', /Version\/([0-9\._]+).*Safari/],
+  ['Edge', /Edg\/([0-9\._]+)/],
+  ['Edge', /Edge\/([0-9\._]+)/],
+  ['Edge', /EdgA\/([0-9\._]+)/],
+  ['Edge', /EdgiOS\/([0-9\._]+)/],
+  ['Chrome', /CriOS\/([0-9\.]+)(:?\s|$)/],
+  ['Chrome', /(?!Chrom.*OPR)Chrom(?:e|ium)\/([0-9\.]+)(:?\s|$)/],
+  ['Firefox', /Firefox\/([0-9\.]+)(?:\s|$)/],
+  ['Firefox', /FxiOS\/([0-9\.]+)/],
+  ['Safari', /Version\/([0-9\._]+).*Mobile.*Safari.*/],
+  ['Safari', /Version\/([0-9\._]+).*Safari/],
 ];
 const operatingSystemRules: OperatingSystemRule[] = [
   ['iOS', /iP(hone|od|ad)/],
@@ -55,7 +52,7 @@ const operatingSystemRules: OperatingSystemRule[] = [
   ['Mac OS', /(Mac_PowerPC)|(Macintosh)/],
 ];
 
-export function detect(userAgent?: string): BrowserInfo | null | boolean {
+export default function detect(userAgent?: string): BrowserInfo | null | boolean {
   if (!!userAgent) {
     return parseUserAgent(userAgent);
   }
