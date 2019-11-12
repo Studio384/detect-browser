@@ -1,5 +1,5 @@
 {
-  "name": "smol-browser",
+  "name": "@studio384/smol-browser",
   "version": "0.1.0",
   "description": "Unpack a browser type and version from the useragent string",
   "main": "index.js",
@@ -11,17 +11,16 @@
     "compile": "tsc",
     "compile-and-size": "yarn tsc && cat index.js | gzip | wc -c",
     "prepare": "npm run test && npm run lint",
-    "patch-release": "npm version patch && npm publish && npm run postpublish",
-    "minor-release": "npm version minor && npm publish && npm run postpublish",
-    "major-release": "npm version major && npm publish && npm run postpublish",
-    "postpublish": "git push origin master --follow-tags",
+    "patch-release": "npm version patch && npm publish",
+    "minor-release": "npm version minor && npm publish",
+    "major-release": "npm version major && npm publish",
     "autoformat": "prettier --write src/** test/**",
     "gendocs": "embellish README.md"
   },
   "stability": "stable",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Studio384/smol-browser.git"
+    "url": "git+https://github.com/Studio384/smol-browser.git"
   },
   "keywords": [
     "browser",
@@ -41,5 +40,10 @@
     "tape": "^4.11.0",
     "tslint": "^5.11.0",
     "typescript": "^3.6.2"
-  }
+  },
+  "directories": {
+    "example": "examples",
+    "test": "test"
+  },
+  "dependencies": {}
 }
